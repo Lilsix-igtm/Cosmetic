@@ -1,7 +1,7 @@
 /* Luxe Aura Beauty demo: product content and all page interactivity live here. */
 
 // Replace this demo number with the business WhatsApp number: country code + number, no + or spaces.
-const WHATSAPP_NUMBER = "2348186882784";
+const WHATSAPP_NUMBER = "2348186882785";
 
 // To use local photos later, replace an image URL with a path like "images/cleanser.jpg".
 const products = [
@@ -38,11 +38,11 @@ function formatMoney(amount) { return money.format(amount); }
 function getProduct(id) { return products.find((product) => product.id === Number(id)); }
 function isAvailable(product) { return product.stock !== "Out of stock"; }
 
-function renderCategories() {
+function renderCategories() { 
   $("#categoryCards").innerHTML = categories.slice(1).map((category, index) => `<button class="category-card" data-category="${category}" style="--category-image:url('${categoryImages[index]}')">${category}</button>`).join("");
   $("#categoryFilters").innerHTML = categories.map((category) => `<button class="filter-button ${category === filters.category ? "active" : ""}" data-category="${category}">${category}</button>`).join("");
 }
-
+ 
 function getVisibleProducts() {
   const term = filters.search.trim().toLowerCase();
   const visible = products.filter((product) => {
